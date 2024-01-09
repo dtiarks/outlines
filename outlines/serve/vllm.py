@@ -57,7 +57,10 @@ class RegexLogitsProcessor:
         self.fsm = fsm
 
     def __call__(
-        self, seq_id: int, input_ids: List[int], scores: torch.Tensor
+        self,
+        input_ids: List[int],
+        scores: torch.Tensor,
+        seq_id: int,
     ) -> torch.Tensor:
         """Use the FSM to bias the logits before sampling the next token."""
 
